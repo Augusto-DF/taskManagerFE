@@ -25,7 +25,7 @@ const Login = () => {
         onChange={handleChange}
         placeholder="Email / username"
       />
-      <Input name="Password" onChange={handleChange} placeholder="password" />
+      <Input name="password" onChange={handleChange} placeholder="Password" />
       <Button onClick={onLogin}>LOGIN</Button>
     </Form>
   );
