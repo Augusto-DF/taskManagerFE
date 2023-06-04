@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { Form, Input, Button } from "./styles";
 
 const Login = () => {
   const [loginPayload, setLoginPayload] = useState({
@@ -17,15 +18,16 @@ const Login = () => {
   }, [loginPayload]);
 
   return (
-    <div>
-      <input
+    <Form>
+      <Input
         name="email/username"
+        type="text"
         onChange={handleChange}
         placeholder="email / username"
       />
-      <input name="password" onChange={handleChange} placeholder="password" />
-      <button onClick={onLogin}>Login</button>
-    </div>
+      <Input name="password" onChange={handleChange} placeholder="password" />
+      <Button onClick={onLogin}>LOGIN</Button>
+    </Form>
   );
 };
 
