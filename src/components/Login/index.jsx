@@ -1,7 +1,10 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Form, Input, Button } from "./styles";
+import { authUserAction } from "../../modules/Auth/actions";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch();
   const [loginPayload, setLoginPayload] = useState({
     ["email/username"]: "",
     password: "",
@@ -14,7 +17,9 @@ const Login = () => {
   );
 
   const onLogin = useCallback(() => {
-    console.log("loginPayload", loginPayload);
+    dispatch(
+      authUserAction(loginPayload["email/username"], loginPayload.password)
+    );
   }, [loginPayload]);
 
   return (
